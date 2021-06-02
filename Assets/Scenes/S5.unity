@@ -585,6 +585,8 @@ GameObject:
   - component: {fileID: 1450642870}
   - component: {fileID: 1450642869}
   - component: {fileID: 1450642868}
+  - component: {fileID: 1450642873}
+  - component: {fileID: 1450642874}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -676,6 +678,8 @@ MonoBehaviour:
   selectedCommands: []
   variables:
   - {fileID: 1450642868}
+  - {fileID: 1450642873}
+  - {fileID: 1450642874}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -700,6 +704,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450642873
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450642867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 2
+  key: HasApple
+  value: 0
+--- !u!114 &1450642874
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450642867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 2
+  key: HP
+  value: 0
 --- !u!1 &2107517876
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +747,7 @@ GameObject:
   - component: {fileID: 2107517880}
   - component: {fileID: 2107517879}
   - component: {fileID: 2107517878}
+  - component: {fileID: 2107517882}
   m_Layer: 5
   m_Name: SaveButton
   m_TagString: Untagged
@@ -737,7 +772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: 238}
+  m_AnchoredPosition: {x: 216, y: 0}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107517878
@@ -755,6 +790,7 @@ MonoBehaviour:
   targetFlow: {fileID: 1450642867}
   boolFlags:
   - HasKey
+  - HasApple
 --- !u!114 &2107517879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,6 +845,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2107517882}
+        m_MethodName: saveIntVariablesFromFungus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2107517880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,3 +893,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107517876}
   m_CullTransparentMesh: 0
+--- !u!114 &2107517882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107517876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33abb915450a048e3bc176398332bb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFlow: {fileID: 1450642867}
+  intVariables:
+  - HP
